@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+html {
+    --blue: #003554;
+    --black: #051923;
+    --teal: #00A6A6;
+    --red: #E84855;
+}
+
+body {
+  font-family: "Geologica", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+

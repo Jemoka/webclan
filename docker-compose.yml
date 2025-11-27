@@ -1,0 +1,9 @@
+services:
+  webclan:
+    build:
+      context: ./server
+    image: talkbank/webclan
+    ports:
+      - "${PORT:-8889}:8000"
+    stdin_open: true
+    tty: true

@@ -7,7 +7,7 @@ export default defineConfig({
         tailwindcss(),
         sveltekit()
     ],
-    preview: [
+    preview: {
         allowedHosts: ["baweb.talkbank.org"]
-    ]
+    }
 });

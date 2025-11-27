@@ -6,5 +6,8 @@ export default defineConfig({
     plugins: [
         tailwindcss(),
         sveltekit()
+    ],
+    preview: [
+        allowedHosts: ["baweb.talkbank.org"]
     ]
 });

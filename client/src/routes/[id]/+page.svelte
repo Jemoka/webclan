@@ -232,6 +232,7 @@
 						bind:value={commandArgs}
 						placeholder="Enter the arguments and flags of your command here, such as the input file name."
 						disabled={executing}
+						on:keydown={(e) => e.key === 'Enter' && executeCommand()}
 					/>
 				</div>
 

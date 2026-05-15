@@ -11,7 +11,8 @@ RUN unzip /webclan/source/unix-clan.zip -d /webclan/source
 # stick CFLAGS = -O -DUNX -Wno-deprecated -Wno-deprecated-declarations -Wno-narrowing on top of /webclan/source/unix-clan/src/makefile
 RUN sed -i '1i CFLAGS = -O -DUNX -Wno-deprecated -Wno-deprecated-declarations -Wno-narrowing\n' /webclan/source/unix-clan/src/makefile
 # build the source code
-RUN make -C /webclan/source/unix-clan/src all
+# the zip ships pre-built macOS arm64 .o files in unix/obj/; wipe them so Linux ld doesn't choke
+RUN make -C /webclan/source/unix-clan/src clean && make -C /webclan/source/unix-clan/src all
 RUN mv /webclan/source/unix-clan/lib /webclan/lib
 RUN mkdir /webclan/unix
 RUN mv /webclan/source/unix-clan/unix/bin /webclan/unix/bin
